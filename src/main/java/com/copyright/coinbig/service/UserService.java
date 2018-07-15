@@ -35,6 +35,28 @@ public class UserService {
 
         params.add(new BasicNameValuePair("sign", sign));
 
+        String orderFee = HttpUtil.getWeChatUserInfo(url, params);
+        // 响应结果
+        logger.info(orderFee);
+    }
+
+    public void userInfo() {
+        Long date = new Date().getTime();
+        Map<String, String> signParams = new HashMap<>();
+        signParams.put("apikey", "9381986A19659AD75BBF74483A8E0CA2");
+        signParams.put("time", date.toString());
+        // 请求地址：获取用户资产信息
+        String url = "https://www.coinbig.com/api/publics/v1/userinfo";
+        // 构建请求参数
+        List<NameValuePair> params = new ArrayList<>();
+        // 公钥为post请求必填参数
+        params.add(new BasicNameValuePair("apikey", "9381986A19659AD75BBF74483A8E0CA2"));
+        params.add(new BasicNameValuePair("time", date.toString()));
+        // 构建签名，请求参数和私钥
+        String sign = SignUtil.buildMysign(signParams, "E81A5DE3A8BBB0A94F4E226B25CD3754");
+
+        params.add(new BasicNameValuePair("sign", sign));
+
         String userInfo = HttpUtil.getWeChatUserInfo(url, params);
         // 响应结果
         logger.info(userInfo);

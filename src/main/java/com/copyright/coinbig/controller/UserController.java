@@ -16,4 +16,11 @@ public class UserController {
         userService.orderFee();
         return "orderFee";
     }
+
+    @RequestMapping("/userInfo")
+    public String userInfo() {
+        userService.userInfo();
+        return "userInfo";
+    }
+
 }
