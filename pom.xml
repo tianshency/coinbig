@@ -18,6 +18,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <repositories>
+        <repository>
+            <id>opensymphony-releases</id>
+            <name>Repository Opensymphony Releases</name>
+            <url>https://oss.sonatype.org/content/repositories/opensymphony-releases</url>
+        </repository>
+    </repositories>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -38,6 +46,29 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.groboutils</groupId>
+            <artifactId>groboutils-core</artifactId>
+            <version>5</version>
         </dependency>
     </dependencies>
 
